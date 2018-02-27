@@ -1,0 +1,15 @@
+version: '3'
+services:
+  facade:
+    image: nginx
+    ports:
+    - 80:80
+    - 443:443
+  legacy:
+    build: legacy/
+    ports:
+    - 8080:8080
+  modern:
+    build: modern/
+    ports:
+    - 3000:3000
