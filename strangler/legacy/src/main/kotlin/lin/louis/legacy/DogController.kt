@@ -11,7 +11,7 @@ class DogController {
     @GetMapping
     fun getDogs(): Array<Dog> {
         val dogs = arrayOf(Dog("Doge"), Dog("Pluto"), Dog("Ogie"), Dog("Snoopy"))
-        logger.info("Got ${dogs.size} cats from legacy app")
+        logger.info("Got ${dogs.size} dogs from legacy app")
         return dogs
     }
 

@@ -1,15 +1,27 @@
 version: '3'
+
 services:
   facade:
-    image: nginx
+    build: facade/
     ports:
     - 80:80
-    - 443:443
+    depends_on:
+    - legacy
+    - modern
+    networks:
+    - web
   legacy:
     build: legacy/
     ports:
     - 8080:8080
+    networks:
+    - web
   modern:
     build: modern/
     ports:
     - 3000:3000
+    networks:
+    - web
+
+networks:
+  web:
