@@ -13,9 +13,11 @@ FROM alpine:3.7
 
 WORKDIR /opt/app
 
+# Add the executable file built previously
 COPY --from=builder /opt/app/src/modern .
 
 EXPOSE 3000
 
+# Run the binary
 ENTRYPOINT ["./modern"]
 
