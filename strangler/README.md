@@ -1,5 +1,7 @@
 # Stranger pattern
 
+> How to migrate legacy apps efficiently
+
 ![strangler pattern](strangler.png)
 
 ## Example
