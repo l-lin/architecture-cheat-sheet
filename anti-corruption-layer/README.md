@@ -99,6 +99,8 @@ We want to get the information of the cats with their bed:
 So, our ACL will be in charged to fetch the information needed from the legacy code and clean them,
 call the modern apps to complete the desired output.
 
+## Running the example
+
 ```bash
 docker-compose up
 # Calling this url will target the legacy app for the entity "cat"
