@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  acl:
+    build: acl/
+    ports:
+    - 3000:3000
+    networks:
+    - web
+  legacy_cat:
+    build: legacy-cat/
+    ports:
+    - 8080:8080
+    networks:
+    - web
+  modern_cat:
+    build: modern-cat/
+    ports:
+    - 3001:3000
+    networks:
+    - web
+  modern_bed:
+    build: modern-bed/
+    ports:
+    - 3002:3000
+    networks:
+    - web
+
+networks:
+  web:
