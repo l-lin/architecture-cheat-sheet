@@ -19,6 +19,8 @@
   - It redirects the path `/cats` to the modern app
   - It redirects the rest to the legacy app
 
+## Running the example
+
 ```bash
 docker-compose up
 # Calling this url will target the legacy app. Check the logs to verify the call.
