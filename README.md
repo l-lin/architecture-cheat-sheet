@@ -3,5 +3,6 @@
 | Name | Description |
 | ---- | ----------- |
 | [Anti-corruption layer pattern](anti-corruption-layer) | How to work around legacy apps |
+| [Gateway routing pattern](gateway-routing) | Route requests to multiple services using a single endpoint |
 | [Strangler pattern](strangler) | How to migrate legacy apps efficiently |
 

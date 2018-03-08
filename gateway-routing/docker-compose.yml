@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  gateway:
+    build: gateway/
+    ports:
+    - 80:80
+    depends_on:
+    - dog
+    - cat
+    networks:
+    - web
+  dog:
+    build: dog/
+    ports:
+    - 3000:3000
+    networks:
+    - web
+  cat:
+    build: cat/
+    ports:
+    - 3001:3000
+    networks:
+    - web
+
+networks:
+  web:
