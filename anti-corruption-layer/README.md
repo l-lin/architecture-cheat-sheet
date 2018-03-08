@@ -1,5 +1,7 @@
 # Anti-corruption layer pattern
 
+> How to work around legacy apps
+
 ![ACL](acl.png)
 
 ## Example
