@@ -112,7 +112,7 @@ curl -L http://localhost:3001/cats
 # Calling this url will target the modern app for the entity "bed"
 curl -L http://localhost:3002/cats/Tony/bed
 # Calling this url will target the ACL
-curl -L http://localhost:3000/cats
+curl -L http://localhost/cats
 # Notice the final representation of the entity of the cat does not have the undesired
 # field "weight", the field "catType" has been changed to "type" and we linked the
 # entity "bed" to each cat.
