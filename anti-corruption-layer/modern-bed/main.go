@@ -41,7 +41,7 @@ func bedHandler(w http.ResponseWriter, req *http.Request) {
 func getBed(w http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	catName := vars["catName"]
-	bedType := bedTypes[randInt(0, 3)]
+	bedType := bedTypes[randInt(0, len(bedTypes))]
 	log.Printf("[INFO] Got '%s' for cat '%s' from modern app", catName, bedType)
 	write(w, http.StatusOK, Bed{
 		Name:    bedType,

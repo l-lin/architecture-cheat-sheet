@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-const modernCatURL = "http://modern_cat:3000"
+const modernCatURL = "http://modern_cat:3000/cats"
 
 // ModernCat represents the DTO from the modern app
 type ModernCat struct {
@@ -16,7 +16,7 @@ type ModernCat struct {
 
 func getModernCats() []ModernCat {
 	var modernCats []ModernCat
-	resp, _ := http.Get("http://modern_cat:3000/cats")
+	resp, _ := http.Get(modernCatURL)
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 	json.Unmarshal(body, &modernCats)
