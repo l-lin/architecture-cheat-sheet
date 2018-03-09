@@ -29,7 +29,7 @@ curl -L http://localhost/dogs/snoopy
 # and he is only using one "protocol"
 ```
 
-## Sources
+## Sources
 
 - [Microsoft Azure](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-routing)
 - [microservices.io](http://microservices.io/patterns/apigateway.html)
