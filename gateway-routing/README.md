@@ -20,7 +20,7 @@ from REST endpoints.
 ## Running the example
 
 ```bash
-docker-compse up
+docker-compose up
 # Calling this url will call the cat service
 curl -L http://localhost/cats
 # Calling this url will call the dog service
