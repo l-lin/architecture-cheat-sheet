@@ -2,7 +2,7 @@
 
 > Unified interface to services
 
-![Gateway routing](gateway_routing.png)
+![Gateway routing](gateway-routing.png)
 
 ## Example
 
