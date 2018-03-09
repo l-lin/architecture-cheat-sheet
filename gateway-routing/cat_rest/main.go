@@ -8,38 +8,48 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/dogs", dogsHandler)
+	http.HandleFunc("/cats", catHandler)
 	port := ":3000"
-	log.Println("[INFO] Serving to port", port)
+	log.Println("[INFO] Serving cat REST to port", port)
 	err := http.ListenAndServe(port, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
 }
 
-type Dog struct {
-	Name string `json:"name"`
+type Cat struct {
+	Name  string `json:"name"`
+	Color string `json:"color"`
 }
 
-func dogsHandler(w http.ResponseWriter, req *http.Request) {
+func catHandler(w http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case "GET":
-		getDogs(w, req)
+		getCats(w, req)
 	default:
 		log.Printf("[WARN] Only GET method are supported. %s is not supported", req.Method)
 		fmt.Fprintf(w, "Only GET method are supported")
 	}
 }
 
-func getDogs(w http.ResponseWriter, req *http.Request) {
-	dogs := []Dog{
-		Dog{"Doge"},
-		Dog{"Pluto"},
-		Dog{"Ogie"},
-		Dog{"Snoop"},
+func getCats(w http.ResponseWriter, req *http.Request) {
+	cats := []Cat{
+		Cat{
+			"Tony",
+			"Orange",
+		},
+		Cat{
+			"Tadar Sauce",
+			"Black & White",
+		},
+		Cat{
+			"Nyan cat",
+			"Multi-color",
+		},
 	}
-	log.Printf("[INFO] Got %d dogs", len(dogs))
-	write(w, http.StatusOK, dogs)
+
+	log.Printf("[INFO] Got %d cats from cat REST app", len(cats))
+	write(w, http.StatusOK, cats)
 }
 
 func write(w http.ResponseWriter, status int, n interface{}) {

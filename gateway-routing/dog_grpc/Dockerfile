@@ -6,26 +6,31 @@ RUN apk update && \
     apk add git
 
 # Download the dependencies
-RUN go get github.com/gorilla/mux
+RUN go get -u google.golang.org/grpc && \
+    go get -u github.com/golang/protobuf/protoc-gen-go
 
 # Create a working directory
 WORKDIR /opt/app/src
 
 # Add source code
-ADD . .
+ADD . ./dog_grpc
+
+ADD ./dog ./dog
+
+# Change working directory
+WORKDIR /opt/app/src/dog_grpc
 
 # Run main.go
-RUN go build -o dog .
+RUN go build -o dog_grpc .
 # -----------
 FROM alpine:3.7
 
 WORKDIR /opt/app
 
 # Fetch the executable
-COPY --from=builder /opt/app/src/dog .
+COPY --from=builder /opt/app/src/dog_grpc .
 
 EXPOSE 3000
 
 # Run the binary
-ENTRYPOINT ["./dog"]
-
+ENTRYPOINT ["./dog_grpc"]

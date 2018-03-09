@@ -7,17 +7,16 @@ WORKDIR /opt/app/src
 ADD . .
 
 # Run main.go
-RUN go build -o cat .
+RUN go build -o cat_rest .
 # -----------
 FROM alpine:3.7
 
 WORKDIR /opt/app
 
 # Add the executable file built previously
-COPY --from=builder /opt/app/src/cat .
+COPY --from=builder /opt/app/src/cat_rest .
 
 EXPOSE 3000
 
 # Run the binary
-ENTRYPOINT ["./cat"]
-
+ENTRYPOINT ["./cat_rest"]

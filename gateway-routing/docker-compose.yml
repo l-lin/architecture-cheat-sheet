@@ -4,20 +4,20 @@ services:
   gateway:
     build: gateway/
     ports:
-    - 80:80
+    - 80:3000
     depends_on:
-    - dog
-    - cat
+    - dog_grpc
+    - cat_rest
     networks:
     - web
-  dog:
-    build: dog/
+  dog_grpc:
+    build: dog_grpc/
     ports:
     - 3000:3000
     networks:
     - web
-  cat:
-    build: cat/
+  cat_rest:
+    build: cat_rest/
     ports:
     - 3001:3000
     networks:
