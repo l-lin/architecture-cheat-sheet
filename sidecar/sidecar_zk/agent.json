@@ -1,0 +1,5 @@
+{
+  "zookeeperHosts": "zk",
+  "name": "cat",
+  "description": "Cat service"
+}

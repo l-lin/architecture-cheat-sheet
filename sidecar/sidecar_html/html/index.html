@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body{margin:0;color:#fff;text-align:center;text-shadow:0 2px 4px rgba(0,0,0,.5);padding:0;min-height:100%;-webkit-box-shadow:inset 0 0 100px rgba(0,0,0,.8);box-shadow:inset 0 0 100px rgba(0,0,0,.8);display:table;font-family:"Open Sans",Arial,sans-serif}
+body,html{width:100%;height:100%;background-color:#21232a}
+h1{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:36px}
+h1 small{font-size:68%;font-weight:400;line-height:1;color:#777}
+.cover{display:table-cell;vertical-align:middle;padding:0 20px}
+footer{position:fixed;width:100%;height:40px;left:0;bottom:0;color:#a0a0a0;font-size:14px}
+#content {width: 835px; margin: auto;}
+pre {outline: 1px solid #ccc; padding: 10px; text-align: left; }
+.string { color: #03da03; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+</style>
+<head>
+    <meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sidecar pattern</title>
+</head>
+<body>
+    <div class="cover">
+        <h1>GET <small>http://localhost/cats</small></h1>
+        <div id="content"></div>
+   	</div>
+    <footer><p>Sidecar pattern</p></footer>
+
+    <script type="text/javascript">
+        // Shamelessly copied from https://stackoverflow.com/a/4033310/3612053
+        function httpGetAsync(url, callback) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() { 
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", url, true); // true for asynchronous 
+            xmlHttp.send(null);
+        }
+
+        // Shamelessly copied from https://stackoverflow.com/a/7220510/3612053
+        function syntaxHighlight(json) {
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                var cls = 'number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'key';
+                    } else {
+                        cls = 'string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+
+        httpGetAsync('http://localhost/cats', function(responseText) {
+            var json = JSON.parse(responseText);
+            document.getElementById('content').appendChild(document.createElement('pre')).innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 2));
+        });
+    </script>
+</body>
+</html>

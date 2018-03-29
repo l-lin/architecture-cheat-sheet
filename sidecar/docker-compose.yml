@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  cat:
+    build: cat/
+    depends_on:
+    - zk
+    networks:
+    - web
+    ports:
+    - 3000:3000
+  sidecar_html:
+    build: sidecar_html/
+    depends_on:
+    - cat
+    networks:
+    - web
+    ports:
+    - 80:80
+  sidecar_zk:
+    build: sidecar_zk/
+    depends_on:
+    - zk
+    - cat
+    networks:
+    - web
+  zk:
+    image: zookeeper:3.4.11
+    networks:
+    - web
+    ports:
+    - 2181:2181
+
+networks:
+  web:
