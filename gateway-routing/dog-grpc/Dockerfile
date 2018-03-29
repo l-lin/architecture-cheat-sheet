@@ -13,24 +13,24 @@ RUN go get -u google.golang.org/grpc && \
 WORKDIR /opt/app/src
 
 # Add source code
-ADD . ./dog_grpc
+ADD . ./dog-grpc
 
 ADD ./dog ./dog
 
 # Change working directory
-WORKDIR /opt/app/src/dog_grpc
+WORKDIR /opt/app/src/dog-grpc
 
 # Run main.go
-RUN go build -o dog_grpc .
+RUN go build -o dog-grpc .
 # -----------
 FROM alpine:3.7
 
 WORKDIR /opt/app
 
 # Fetch the executable
-COPY --from=builder /opt/app/src/dog_grpc .
+COPY --from=builder /opt/app/src/dog-grpc .
 
 EXPOSE 3000
 
 # Run the binary
-ENTRYPOINT ["./dog_grpc"]
+ENTRYPOINT ["./dog-grpc"]

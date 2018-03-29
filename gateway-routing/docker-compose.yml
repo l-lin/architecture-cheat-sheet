@@ -11,13 +11,13 @@ services:
     networks:
     - web
   dog_grpc:
-    build: dog_grpc/
+    build: dog-grpc/
     ports:
     - 3000:3000
     networks:
     - web
   cat_rest:
-    build: cat_rest/
+    build: cat-rest/
     ports:
     - 3001:3000
     networks:
