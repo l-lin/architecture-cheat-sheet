@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-body{margin:0;color:#fff;text-align:center;text-shadow:0 2px 4px rgba(0,0,0,.5);padding:0;min-height:100%;-webkit-box-shadow:inset 0 0 100px rgba(0,0,0,.8);box-shadow:inset 0 0 100px rgba(0,0,0,.8);display:table;font-family:"Open Sans",Arial,sans-serif}
-body,html{width:100%;height:100%;background-color:#21232a}
-h1{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:36px}
-h1 small{font-size:68%;font-weight:400;line-height:1;color:#777}
-.cover{display:table-cell;vertical-align:middle;padding:0 20px}
+body{margin:0;color:#fff;text-align:center;text-shadow:0 2px 4px rgba(0,0,0,.5);padding:0;min-height:100%;-webkit-box-shadow:inset 0 0 100px rgba(0,0,0,.8);box-shadow:inset 0 0 100px rgba(0,0,0,.8);display:table;font-family:"Open Sans",Arial,sans-serif;}
+body,html{width:100%;height:100%;background-color:#21232a;}
+h1{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:36px;cursor: pointer;}
+h1 small{font-size:68%;font-weight:400;line-height:1;color:#777;}
+.cover{display:table-cell;vertical-align:middle;padding:0 20px;}
 footer{position:fixed;width:100%;height:40px;left:0;bottom:0;color:#a0a0a0;font-size:14px}
-#content {width: 835px; margin: auto;}
-pre {outline: 1px solid #ccc; padding: 10px; text-align: left; }
-.string { color: #03da03; }
-.number { color: darkorange; }
-.boolean { color: blue; }
-.null { color: magenta; }
-.key { color: red; }
+#content {width:835px;margin:auto;}
+pre {outline:1px solid #ccc;padding:10px;text-align:left;overflow: hidden;text-overflow:ellipsis;}
+.string{color:#03da03;}
+.number{color:darkorange;}
+.boolean{color:blue;}
+.null{color:magenta;}
+.key{color:red;}
 </style>
 <head>
     <meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,7 +21,7 @@ pre {outline: 1px solid #ccc; padding: 10px; text-align: left; }
 </head>
 <body>
     <div class="cover">
-        <h1>GET <small>http://localhost/cats</small></h1>
+        <h1 onclick="getCat()">GET <small>http://localhost/cats</small></h1>
         <div id="content"></div>
    	</div>
     <footer><p>Sidecar pattern</p></footer>
@@ -58,10 +58,12 @@ pre {outline: 1px solid #ccc; padding: 10px; text-align: left; }
             });
         }
 
-        httpGetAsync('http://localhost/cats', function(responseText) {
-            var json = JSON.parse(responseText);
-            document.getElementById('content').appendChild(document.createElement('pre')).innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 2));
-        });
+        function getCat() {
+            httpGetAsync('http://localhost/cats', function(responseText) {
+                var json = JSON.parse(responseText);
+                document.getElementById('content').appendChild(document.createElement('pre')).innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 2));
+            });
+        }
     </script>
 </body>
 </html>
