@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  cat:
+    build: cat/
+    depends_on: 
+    - kafka
+    networks:
+    - web
+    ports:
+    - 3000:3000
+  kafka:
+    depends_on: 
+    - zk
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_CREATE_TOPICS: "events:1:1"
+      KAFKA_ZOOKEEPER_CONNECT: zk:2181
+    image: wurstmeister/kafka
+    networks: 
+    - web
+    ports:
+    - 9092:9092
+  zk:
+    image: zookeeper:3.4.11
+    networks:
+    - web
+    ports:
+    - 2181:2181
+
+networks: 
+  web:
