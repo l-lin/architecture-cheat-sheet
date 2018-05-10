@@ -32,11 +32,9 @@ firefox http://localhost
 # The cat service can continue to live without the Nginx
 # The Nginx is only used to facilitate the call to the cat service
 
-# Open a TTY to the zookeeper container
-docker exec -it sidecar_zk_1 sh
 # Connect to the zookeeper service
-/zookeeper-3.4.11 $ ./bin/zkCli.sh -server localhost:2181
-# This will display the content of the pat /
+docker exec -it sidecar_zk_1 /zookeeper-3.4.11/bin/zkCli.sh -server localhost:2181
+# This will display the content of the path /
 [zk: localhost:2181(CONNECTED) 0] ls /
 [zookeeper, cat]
 # This will display the info of the node /cat
