@@ -1,0 +1,8 @@
+version: '3'
+
+services: 
+  cat:
+    build: cat
+    container_name: cat
+    ports: 
+      - 3000:3000
