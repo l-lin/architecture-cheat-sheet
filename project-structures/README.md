@@ -27,8 +27,7 @@ To compare the different project structure, we will use a simple pet store proje
 Here are some common project structures:
 
 - [flat structure](flat)
-- [layered group by function](layered)
-- [modular group by use case](modular)
-- [hexagonal architecture](hexagonal)
+- [layered aka group by function](layered)
+- [modular aka group by business logic](modular)
 - [clean architecture](clean)
 
