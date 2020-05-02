@@ -11,10 +11,6 @@ import lin.louis.flat.model.OrderStatus;
 
 class MemoryOrderDAOTest {
 
-	private static final String NAME = "foobar";
-
-	private static final String PET_TYPE = "cat";
-
 	private OrderDAO orderDAO;
 
 	@BeforeEach

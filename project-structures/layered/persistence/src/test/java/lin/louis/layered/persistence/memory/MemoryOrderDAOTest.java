@@ -11,10 +11,6 @@ import lin.louis.layered.persistence.entity.OrderStatus;
 
 class MemoryOrderDAOTest {
 
-	private static final String NAME = "foobar";
-
-	private static final String PET_TYPE = "cat";
-
 	private OrderDAO orderDAO;
 
 	@BeforeEach
