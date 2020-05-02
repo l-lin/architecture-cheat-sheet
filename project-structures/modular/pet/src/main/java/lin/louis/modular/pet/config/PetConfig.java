@@ -5,9 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import lin.louis.modular.pet.PetPackage;
-import lin.louis.modular.pet.dao.memory.MemoryPetDAO;
+import lin.louis.modular.pet.dao.impl.MemoryPetDAO;
 import lin.louis.modular.pet.service.PetService;
-import lin.louis.modular.pet.service.simple.SimplePetService;
+import lin.louis.modular.pet.service.impl.SimplePetService;
 
 /**
  * PetStoreConfig is used to declare Spring beans, implementation to use, etc...

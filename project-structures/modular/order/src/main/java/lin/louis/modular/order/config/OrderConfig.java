@@ -5,9 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import lin.louis.modular.order.OrderPackage;
-import lin.louis.modular.order.dao.memory.MemoryOrderDAO;
+import lin.louis.modular.order.dao.impl.MemoryOrderDAO;
 import lin.louis.modular.order.service.OrderService;
-import lin.louis.modular.order.service.simple.SimpleOrderService;
+import lin.louis.modular.order.service.impl.SimpleOrderService;
 import lin.louis.modular.pet.service.PetService;
 
 /**
