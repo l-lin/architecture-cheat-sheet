@@ -7,18 +7,14 @@ abstraction functions by package:
 
 ```text
 .
-└── src
-    └── main
-        └── java
-            └── lin
-                └── louis
-                    ├── config     # app configuration
-                    ├── controller # web layer
-                    ├── dao        # persistence layer interfaces
-                    │   └── impl   # persistence layer implementation
-                    ├── model      # data representations
-                    └── service    # business logic layer interfaces
-                        └── impl   # business logic layer implementation
+└── ...
+    ├── config     # app configuration
+    ├── controller # web layer
+    ├── dao        # persistence layer interfaces
+    │   └── impl   # persistence layer implementation
+    ├── model      # data representations
+    └── service    # business logic layer interfaces
+        └── impl   # business logic layer implementation
 ```
 
 ## Pattern analysis
