@@ -24,7 +24,7 @@ To compare the different project structure, we will use a simple pet store proje
 
 ## Patterns
 
-Here are some common project structures:
+Here are some common project structures I used:
 
 - [flat structure](flat)
 - [layered aka group by function](layered)
