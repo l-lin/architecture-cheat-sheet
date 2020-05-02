@@ -6,10 +6,10 @@ import lin.louis.clean.usecase.port.IdGenerator;
 
 public class LongIdGenerator implements IdGenerator {
 
-	private static final AtomicLong ID_GENERATOR = new AtomicLong(0);
+	private final AtomicLong idGenerator = new AtomicLong(0);
 
 	@Override
 	public String generate() {
-		return Long.toString(ID_GENERATOR.incrementAndGet());
+		return Long.toString(idGenerator.incrementAndGet());
 	}
 }
