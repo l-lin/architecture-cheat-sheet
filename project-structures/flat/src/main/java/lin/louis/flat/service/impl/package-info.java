@@ -3,4 +3,4 @@
  * switch the DAO implementation. We can also create another implementation that encapsulates the simple implementation
  * to enrich the functionalities, e.g. add a transactional function.
  */
-package lin.louis.flat.service.simple;
+package lin.louis.flat.service.impl;
