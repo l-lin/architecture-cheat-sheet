@@ -2,7 +2,8 @@
 
 > The fastest way to structure a project.
 
-This project structure is quite straightforward: split the project into abstraction functions:
+This project structure is quite straightforward: one single project and split the project into
+abstraction functions by package:
 
 ```text
 .
@@ -13,11 +14,11 @@ This project structure is quite straightforward: split the project into abstract
                 └── louis
                     ├── config     # app configuration
                     ├── controller # web layer
-                    ├── dao        # persistence layer
-                    │   └── memory # in memory persistence implementation
+                    ├── dao        # persistence layer interfaces
+                    │   └── impl   # persistence layer implementation
                     ├── model      # data representations
-                    └── service    # business logic layer
-                        └── simple # simple business logic implementation
+                    └── service    # business logic layer interfaces
+                        └── impl   # business logic layer implementation
 ```
 
 ## Pattern analysis
@@ -37,13 +38,15 @@ This flat structure can make a good starting point to quickly start developing n
 ## Considerations
 
 All classes are in `public` scope, hence everyone can use everyone, e.g. the `controller` package
-can directly access to the `dao` classes, which can be a source of unmaintainable code.
+can directly access to the `dao` classes, which can violate the layer scopes if one is not careful.
+In this organisation, one may be lazy and will tend to create a GOD `service` class that depends on
+everyone to perform some complex logic. In other words, this structure does not prevent using
+anti-patterns.
 
 This project structure tends to lend itself toward monolithic applications, and it's really not
 recommended to continue using this pattern if the application starts to be big. Indeed, because each
 package can be tightly coupled, it's difficult to scale the project.
 
 Moreover, it's really difficult to extract part of the business logic to another component when
-using this pattern, as classes tends to be tightly coupled (see
-[OrderService](./src/main/java/lin/louis/flat/service/OrderService.java)).
+using this pattern, as classes tends to be tightly coupled.
 
