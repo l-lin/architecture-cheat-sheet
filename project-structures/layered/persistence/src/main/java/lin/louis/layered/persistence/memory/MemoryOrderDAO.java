@@ -13,13 +13,13 @@ import lin.louis.layered.persistence.model.Order;
  */
 public class MemoryOrderDAO implements OrderDAO {
 
-	private static final AtomicLong ID_GENERATOR = new AtomicLong(0);
+	private final AtomicLong idGenerator = new AtomicLong(0);
 
 	private final Map<Long, Order> orders = new ConcurrentHashMap<>();
 
 	@Override
 	public long save(Order order) {
-		var orderId = ID_GENERATOR.incrementAndGet();
+		var orderId = idGenerator.incrementAndGet();
 		order.setOrderId(orderId);
 		orders.put(orderId, order);
 		return orderId;

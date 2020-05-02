@@ -10,4 +10,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>persistence</artifactId>
+
+	<dependencies>
+		<!-- TEST -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

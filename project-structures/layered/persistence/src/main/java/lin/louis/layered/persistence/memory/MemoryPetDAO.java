@@ -13,13 +13,13 @@ import lin.louis.layered.persistence.model.Pet;
  */
 public class MemoryPetDAO implements PetDAO {
 
-	private static final AtomicLong ID_GENERATOR = new AtomicLong(0);
+	private final AtomicLong idGenerator = new AtomicLong(0);
 
 	private final Map<Long, Pet> pets = new ConcurrentHashMap<>();
 
 	@Override
 	public long save(Pet pet) {
-		var petId = ID_GENERATOR.incrementAndGet();
+		var petId = idGenerator.incrementAndGet();
 		pet.setPetId(petId);
 		pets.put(petId, pet);
 		return petId;
