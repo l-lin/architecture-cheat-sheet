@@ -49,7 +49,6 @@ class MemoryOrderDAOTest {
 		}
 
 		@Test
-		@org.junit.jupiter.api.Order(2)
 		void shouldReturnAnEmptyOptional_whenNotFound() {
 			var orderOptional = orderDAO.findById(888);
 

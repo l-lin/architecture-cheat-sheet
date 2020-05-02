@@ -31,8 +31,8 @@ import lin.louis.layered.persistence.entity.Pet;
 import lin.louis.layered.persistence.entity.PetNotAvailableException;
 import lin.louis.layered.persistence.entity.PetNotFoundException;
 import lin.louis.layered.persistence.entity.PetStatus;
-import lin.louis.layered.web.mapper.OrderMapper;
-import lin.louis.layered.web.mapper.PetMapper;
+import lin.louis.layered.web.dto.mapper.OrderMapper;
+import lin.louis.layered.web.dto.mapper.PetMapper;
 
 @ExtendWith(SpringExtension.class)
 class PetControllerTest {

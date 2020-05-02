@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lin.louis.layered.domain.OrderService;
 import lin.louis.layered.persistence.entity.OrderNotFoundException;
 import lin.louis.layered.web.dto.OrderDTO;
-import lin.louis.layered.web.mapper.OrderMapper;
+import lin.louis.layered.web.dto.mapper.OrderMapper;
 
 @RestController
 @RequestMapping(path = "/orders")

@@ -15,8 +15,8 @@ import lin.louis.layered.domain.PetService;
 import lin.louis.layered.persistence.entity.PetNotFoundException;
 import lin.louis.layered.web.dto.OrderDTO;
 import lin.louis.layered.web.dto.PetDTO;
-import lin.louis.layered.web.mapper.OrderMapper;
-import lin.louis.layered.web.mapper.PetMapper;
+import lin.louis.layered.web.dto.mapper.OrderMapper;
+import lin.louis.layered.web.dto.mapper.PetMapper;
 
 @RestController
 @RequestMapping(path = "/pets")

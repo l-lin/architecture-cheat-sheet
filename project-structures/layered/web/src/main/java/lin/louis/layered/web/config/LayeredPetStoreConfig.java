@@ -9,8 +9,8 @@ import lin.louis.layered.domain.simple.SimpleOrderService;
 import lin.louis.layered.domain.simple.SimplePetService;
 import lin.louis.layered.persistence.memory.MemoryOrderDAO;
 import lin.louis.layered.persistence.memory.MemoryPetDAO;
-import lin.louis.layered.web.mapper.OrderMapper;
-import lin.louis.layered.web.mapper.PetMapper;
+import lin.louis.layered.web.dto.mapper.OrderMapper;
+import lin.louis.layered.web.dto.mapper.PetMapper;
 
 /**
  * PetStoreConfig is used to declare Spring beans, implementation to use, etc...
