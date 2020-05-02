@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 import lin.louis.layered.persistence.PetDAO;
-import lin.louis.layered.persistence.model.Pet;
+import lin.louis.layered.persistence.entity.Pet;
 
 /**
  * Simple DAO implementation that persists the data in memory.

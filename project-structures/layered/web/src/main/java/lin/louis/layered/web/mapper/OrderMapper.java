@@ -1,7 +1,7 @@
 package lin.louis.layered.web.mapper;
 
-import lin.louis.layered.persistence.model.Order;
-import lin.louis.layered.persistence.model.OrderStatus;
+import lin.louis.layered.persistence.entity.Order;
+import lin.louis.layered.persistence.entity.OrderStatus;
 import lin.louis.layered.web.dto.OrderDTO;
 import lin.louis.layered.web.dto.OrderStatusDTO;
 

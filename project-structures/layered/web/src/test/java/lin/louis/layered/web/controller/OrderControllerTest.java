@@ -20,10 +20,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import lin.louis.layered.domain.OrderService;
-import lin.louis.layered.persistence.model.Order;
-import lin.louis.layered.persistence.model.OrderStatus;
-import lin.louis.layered.persistence.model.Pet;
-import lin.louis.layered.persistence.model.PetStatus;
+import lin.louis.layered.persistence.entity.Order;
+import lin.louis.layered.persistence.entity.OrderStatus;
+import lin.louis.layered.persistence.entity.Pet;
+import lin.louis.layered.persistence.entity.PetStatus;
 import lin.louis.layered.web.mapper.OrderMapper;
 import lin.louis.layered.web.mapper.PetMapper;
 

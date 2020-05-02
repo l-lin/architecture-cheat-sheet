@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import lin.louis.layered.domain.PetService;
 import lin.louis.layered.persistence.PetDAO;
+import lin.louis.layered.persistence.entity.Pet;
+import lin.louis.layered.persistence.entity.PetStatus;
 import lin.louis.layered.persistence.memory.MemoryPetDAO;
-import lin.louis.layered.persistence.model.Pet;
-import lin.louis.layered.persistence.model.PetStatus;
 
 class SimplePetServiceTest {
 

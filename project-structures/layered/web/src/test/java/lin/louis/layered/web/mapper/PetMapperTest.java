@@ -3,8 +3,8 @@ package lin.louis.layered.web.mapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import lin.louis.layered.persistence.model.Pet;
-import lin.louis.layered.persistence.model.PetStatus;
+import lin.louis.layered.persistence.entity.Pet;
+import lin.louis.layered.persistence.entity.PetStatus;
 import lin.louis.layered.web.dto.PetDTO;
 import lin.louis.layered.web.dto.PetStatusDTO;
 

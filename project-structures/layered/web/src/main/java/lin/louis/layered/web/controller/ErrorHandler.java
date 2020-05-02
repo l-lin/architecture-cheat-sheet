@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import lin.louis.layered.persistence.model.OrderNotFoundException;
-import lin.louis.layered.persistence.model.PetNotAvailableException;
-import lin.louis.layered.persistence.model.PetNotFoundException;
+import lin.louis.layered.persistence.entity.OrderNotFoundException;
+import lin.louis.layered.persistence.entity.PetNotAvailableException;
+import lin.louis.layered.persistence.entity.PetNotFoundException;
 
 @ControllerAdvice
 public class ErrorHandler extends ResponseEntityExceptionHandler {

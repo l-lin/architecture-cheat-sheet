@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import lin.louis.layered.persistence.OrderDAO;
-import lin.louis.layered.persistence.model.Order;
-import lin.louis.layered.persistence.model.OrderStatus;
+import lin.louis.layered.persistence.entity.Order;
+import lin.louis.layered.persistence.entity.OrderStatus;
 
 class MemoryOrderDAOTest {
 

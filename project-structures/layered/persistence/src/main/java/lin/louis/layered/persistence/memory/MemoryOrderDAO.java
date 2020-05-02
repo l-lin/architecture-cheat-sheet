@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 import lin.louis.layered.persistence.OrderDAO;
-import lin.louis.layered.persistence.model.Order;
+import lin.louis.layered.persistence.entity.Order;
 
 /**
  * Simple DAO implementation that persists the data in memory.

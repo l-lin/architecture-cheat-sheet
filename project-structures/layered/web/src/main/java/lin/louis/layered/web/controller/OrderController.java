@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lin.louis.layered.domain.OrderService;
-import lin.louis.layered.persistence.model.OrderNotFoundException;
+import lin.louis.layered.persistence.entity.OrderNotFoundException;
 import lin.louis.layered.web.dto.OrderDTO;
 import lin.louis.layered.web.mapper.OrderMapper;
 

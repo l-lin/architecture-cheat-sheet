@@ -10,14 +10,14 @@ import org.junit.jupiter.params.provider.EnumSource;
 import lin.louis.layered.domain.OrderService;
 import lin.louis.layered.persistence.OrderDAO;
 import lin.louis.layered.persistence.PetDAO;
+import lin.louis.layered.persistence.entity.Order;
+import lin.louis.layered.persistence.entity.OrderStatus;
+import lin.louis.layered.persistence.entity.Pet;
+import lin.louis.layered.persistence.entity.PetNotAvailableException;
+import lin.louis.layered.persistence.entity.PetNotFoundException;
+import lin.louis.layered.persistence.entity.PetStatus;
 import lin.louis.layered.persistence.memory.MemoryOrderDAO;
 import lin.louis.layered.persistence.memory.MemoryPetDAO;
-import lin.louis.layered.persistence.model.Order;
-import lin.louis.layered.persistence.model.OrderStatus;
-import lin.louis.layered.persistence.model.Pet;
-import lin.louis.layered.persistence.model.PetNotAvailableException;
-import lin.louis.layered.persistence.model.PetNotFoundException;
-import lin.louis.layered.persistence.model.PetStatus;
 
 class SimpleOrderServiceTest {
 

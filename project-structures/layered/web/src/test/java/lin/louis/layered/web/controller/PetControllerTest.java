@@ -26,11 +26,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lin.louis.layered.domain.OrderService;
 import lin.louis.layered.domain.PetService;
-import lin.louis.layered.persistence.model.OrderStatus;
-import lin.louis.layered.persistence.model.Pet;
-import lin.louis.layered.persistence.model.PetNotAvailableException;
-import lin.louis.layered.persistence.model.PetNotFoundException;
-import lin.louis.layered.persistence.model.PetStatus;
+import lin.louis.layered.persistence.entity.OrderStatus;
+import lin.louis.layered.persistence.entity.Pet;
+import lin.louis.layered.persistence.entity.PetNotAvailableException;
+import lin.louis.layered.persistence.entity.PetNotFoundException;
+import lin.louis.layered.persistence.entity.PetStatus;
 import lin.louis.layered.web.mapper.OrderMapper;
 import lin.louis.layered.web.mapper.PetMapper;
 
@@ -119,9 +119,12 @@ class PetControllerTest {
 
 		@Test
 		void shouldReturnAnOrder() throws Exception {
-			var order = new lin.louis.layered.persistence.model.Order();
+			var order = new lin.louis.layered.persistence.entity.Order();
 			order.setStatus(OrderStatus.PLACED);
-			given(orderService.save(anyLong(), any(lin.louis.layered.persistence.model.Order.class))).willReturn(order);
+			given(orderService.save(
+					anyLong(),
+					any(lin.louis.layered.persistence.entity.Order.class)
+			)).willReturn(order);
 			var requestBody = objectMapper.writeValueAsString(order);
 
 			mockMvc.perform(post("/pets/" + PET_ID + "/orders")
@@ -135,11 +138,11 @@ class PetControllerTest {
 
 		@Test
 		void shouldReturn404_whenPetIsNotFound() throws Exception {
-			var order = new lin.louis.layered.persistence.model.Order();
+			var order = new lin.louis.layered.persistence.entity.Order();
 			order.setStatus(OrderStatus.PLACED);
 			given(orderService.save(
 					anyLong(),
-					any(lin.louis.layered.persistence.model.Order.class)
+					any(lin.louis.layered.persistence.entity.Order.class)
 			)).willThrow(PetNotFoundException.class);
 			var requestBody = objectMapper.writeValueAsString(order);
 
@@ -153,9 +156,9 @@ class PetControllerTest {
 
 		@Test
 		void shouldReturn400_whenPetIsNotAvailable() throws Exception {
-			var order = new lin.louis.layered.persistence.model.Order();
+			var order = new lin.louis.layered.persistence.entity.Order();
 			order.setStatus(OrderStatus.PLACED);
-			given(orderService.save(anyLong(), any(lin.louis.layered.persistence.model.Order.class))).willThrow(
+			given(orderService.save(anyLong(), any(lin.louis.layered.persistence.entity.Order.class))).willThrow(
 					PetNotAvailableException.class);
 			var requestBody = objectMapper.writeValueAsString(order);
 

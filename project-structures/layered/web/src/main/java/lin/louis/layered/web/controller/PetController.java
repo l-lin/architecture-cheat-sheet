@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lin.louis.layered.domain.OrderService;
 import lin.louis.layered.domain.PetService;
-import lin.louis.layered.persistence.model.PetNotFoundException;
+import lin.louis.layered.persistence.entity.PetNotFoundException;
 import lin.louis.layered.web.dto.OrderDTO;
 import lin.louis.layered.web.dto.PetDTO;
 import lin.louis.layered.web.mapper.OrderMapper;

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import lin.louis.layered.domain.PetService;
 import lin.louis.layered.persistence.PetDAO;
-import lin.louis.layered.persistence.model.Pet;
+import lin.louis.layered.persistence.entity.Pet;
 
 /**
  * A simple implementation that encapsulate a {@link PetDAO}, so we can easily switch the persistence layer without

@@ -1,4 +1,4 @@
-package lin.louis.layered.persistence.model;
+package lin.louis.layered.persistence.entity;
 
 public class PetException extends RuntimeException {
 

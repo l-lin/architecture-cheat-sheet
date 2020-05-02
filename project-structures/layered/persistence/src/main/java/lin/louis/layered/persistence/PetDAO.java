@@ -2,7 +2,7 @@ package lin.louis.layered.persistence;
 
 import java.util.Optional;
 
-import lin.louis.layered.persistence.model.Pet;
+import lin.louis.layered.persistence.entity.Pet;
 
 public interface PetDAO {
 

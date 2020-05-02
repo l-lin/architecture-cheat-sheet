@@ -5,10 +5,10 @@ import java.util.Optional;
 import lin.louis.layered.domain.OrderService;
 import lin.louis.layered.domain.PetService;
 import lin.louis.layered.persistence.OrderDAO;
-import lin.louis.layered.persistence.model.Order;
-import lin.louis.layered.persistence.model.PetNotAvailableException;
-import lin.louis.layered.persistence.model.PetNotFoundException;
-import lin.louis.layered.persistence.model.PetStatus;
+import lin.louis.layered.persistence.entity.Order;
+import lin.louis.layered.persistence.entity.PetNotAvailableException;
+import lin.louis.layered.persistence.entity.PetNotFoundException;
+import lin.louis.layered.persistence.entity.PetStatus;
 
 /**
  * A simple implementation that encapsulates a {@link OrderDAO}, so we can easily switch the persistence layer without
